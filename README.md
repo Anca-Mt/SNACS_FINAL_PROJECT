@@ -17,14 +17,20 @@ CollegeMsg: https://snap.stanford.edu/data/CollegeMsg.html
 1. networks_raw contains two folders: one for dblp original network and one for CollegeMsg network
 2. networks_preprocess: contains the preprocessed original networks ready to be fed to the SNAP algorithm
 3. null_models: for each original network 10 null models were created to be fed to the SNAP algorithm 
-4. results: contains the results obtained by running the SNAP algorithm for both networks (original and null models)
-5. plot: contains the patterns heatmaps and z-scores bar plots
+4. snap: contains the necessary files for creating an executable for running SNAP algorithm (temporal-motifs). The SNAP algorithm is an open source git repository. More information on how to use the algorithm can be found here: https://snap.stanford.edu/temporal-motifs/
+5. results: contains the results obtained by running the SNAP algorithm for both networks (original and null models)
+6. plot: contains the patterns heatmaps and z-scores bar plots
 
 ### Running 
 In order to replicate the files in the directories you need to run: 
 1. preprocessing_{network_name}_network.py 
 2. null_model_creation.py -> select for which network to create the null models (set variable ORIGINAL_NETWORK) and how many null models to create (set variable no_runs)
-3. the results were obtained by cloning and running the SNAP algorithm described in https://snap.stanford.edu/temporal-motifs/ on a separate machine with Linux support
+3. the results were obtained by a running the SNAP algorithm on a separate machine with Linux support. For errorless execution, the networks_preprocessed and null_models directories have to be copied in snap/examples/temporalmotifs directory
+
+**Example of command:** 
+
+*./temporalmotifsmain -i:networks_preprocessed/dblp/dblp_network.txt -delta:1000 -o:results/original_networks/dblp/results_dblp.txt*
+
 4. patterns_visualization.py -> select for which network to visualize the patterns heatmap (set variable NETWORK)
 5. patterns_evaluation.py -> select for which network to compute and visualize the z-scores (set variable NETWORK)
 
