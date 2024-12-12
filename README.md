@@ -36,4 +36,6 @@ In order to replicate the files in the directories you need to run:
 
 *auxiliary:*
 
-For each network there is an info_{network_name}_network.py file which computes some statistics related to the raw network: number of nodes and number of edges
+For each network there is an info_{network_name}_network.py file which computes some statistics related to the raw network: number of nodes and number of edges.
+
+There is also another script, info_preprocessed_networks.py, which computes a more comprehensive set of statistics for the preprocessed networks.
